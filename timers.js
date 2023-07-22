@@ -58,6 +58,14 @@ function addTimer(e) {
         return;
     }
 
+    if (Number(hours.value) === 24 && (Number(minutes.value) !== 0 || Number(seconds.value) !== 0)){
+        alert("Maximum value allowed is 24:00:00. Please enter value within bounds.");
+        hours.value = "";
+        minutes.value = "";
+        seconds.value = "";
+        return;
+    }
+
     var currentTimeCaption = document.getElementById('current-time-caption');
 
     if (!currentTimeCaption.classList.contains('deactivate')){
