@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muliple Timers App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./timers.css">
+</head>
+<body>
+    <h2>Muliple Timers App</h2>
+
+    <section class="set-time-section">
+        <div class="set-time-wrapper">
+            <div class="set-time-caption">Set Time :</div>
+            <div class="set-time-period">
+                <input type="text" placeholder="hh" onfocus="removeLeadingZero(this)" onblur="addLeadingZero(this)" oninput="limitToTwoDigitsAndTillTwentyFour(this)" id="hours">
+                <div class="colon">:</div>
+                <input type="text" placeholder="mm" onfocus="removeLeadingZero(this)" onblur="addLeadingZero(this)" oninput="limitToTwoDigitsAndTillSixty(this)" id="minutes">
+                <div class="colon">:</div>
+                <input type="text" placeholder="ss" onfocus="removeLeadingZero(this)" onblur="addLeadingZero(this)" oninput="limitToTwoDigitsAndTillSixty(this)" id="seconds">
+            </div>
+            <button type="button" class="btn" id="set-time-button">Set</button>
+        </div>
+    </section>
+
+    <section class="current-time-section">
+        <div id="current-time-wrapper">
+            <div id="current-time-heading">Current Timers</div>
+            <div id="current-time-caption">You have no timers currently!</div>
+            <!-- here we insert the timers dynamically -->
+        </div>
+    </section>
+    
+    <script src="./timers.js"></script>
+</body>
+</html>
